@@ -128,7 +128,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   const message = document.getElementById('message').value;
   const subject = encodeURIComponent(`Contact site — ${name}`);
   const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-  window.location.href = `mailto:contact@example.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:laviolettemaeva.m@gmail.com?subject=${subject}&body=${body}`;
 });
 
 // Année dynamique dans le footer
