@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maëva Laviolette — Photographie</title>
+<meta name="description" content="Portfolio photographique de Maëva Laviolette." />
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#home" class="logo">Maëva Laviolette</a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <a href="#gallery">Galerie</a>
+      <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="hero-kicker">Photographe</p>
+      <h1>Maëva Laviolette</h1>
+      <p class="hero-tagline">Je capture des instants, entre deux journées de travail.</p>
+      <a href="#gallery" class="btn">Voir la galerie</a>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="section-inner">
+      <h2>Galerie</h2>
+      <p class="section-intro">Une sélection de mes photos — portraits, paysages, ville, nature. Un aperçu de ce que j'aime capturer.</p>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tout</button>
+        <button class="filter-btn" data-filter="portrait">Portrait</button>
+        <button class="filter-btn" data-filter="paysage">Paysage</button>
+        <button class="filter-btn" data-filter="urbain">Urbain</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Les items sont générés par js/script.js à partir de PHOTOS -->
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="section-inner about-inner">
+      <div class="about-photo" aria-hidden="true"></div>
+      <div class="about-text">
+        <h2>À propos</h2>
+        <p>
+          Je m'appelle Maëva, et la photographie est ma passion que je développe en dehors
+          de mon emploi. J'aime saisir les instants simples et sincères : un regard,
+          une lumière, un lieu qui raconte quelque chose.
+        </p>
+        <p>
+          Autodidacte et toujours en train d'apprendre, je photographie aussi bien des
+          portraits que des paysages ou des scènes de rue. Mon objectif : créer des images
+          qui vous ressemblent et qui durent.
+        </p>
+        <p>
+          Actuellement en train de me lancer, je suis disponible les soirs et week-ends
+          pour des séances photo. N'hésitez pas à me contacter pour discuter de votre projet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="section-inner">
+      <h2>Contact</h2>
+      <p class="section-intro">
+        Une idée de séance, une question, une envie de collaborer ? Écrivez-moi,
+        je réponds dès que possible (en dehors de mes horaires de travail !).
+      </p>
+
+      <div class="contact-wrap">
+        <form class="contact-form" id="contactForm">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Envoyer</button>
+          <p class="form-note">Ce formulaire ouvre votre messagerie pour m'envoyer le message directement.</p>
+        </form>
+
+        <div class="contact-info">
+          <h3>Retrouvez-moi</h3>
+          <ul>
+            <li>Email : <a href="mailto:contact@example.com">contact@example.com</a></li>
+            <li>Instagram : <a href="#" target="_blank" rel="noopener">@maeva.photographie</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Maëva Laviolette. Tous droits réservés.</p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Précédent">&#10094;</button>
+  <img src="" alt="" id="lightboxImg" />
+  <button class="lightbox-next" id="lightboxNext" aria-label="Suivant">&#10095;</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
