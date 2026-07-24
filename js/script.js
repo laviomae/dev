@@ -1,23 +1,22 @@
 // ---------------------------------------------------------------------------
-// Photos de la galerie.
-// Pour ajouter tes propres photos : place tes fichiers dans le dossier
-// "images/", puis remplace le champ "src" ci-dessous par le chemin du fichier
-// (ex: "images/portrait-01.jpg"). Le champ "category" doit être l'une de :
-// "portrait", "paysage", "urbain", "nature".
+// Gallery photos.
+// To add your own photos: place your files in the "images/" folder, then
+// replace the "src" field below with the file path (e.g. "images/portrait-01.jpg").
+// The "category" field must be one of: "portrait", "landscape", "urban", "nature".
 // ---------------------------------------------------------------------------
 const PHOTOS = [
-  { src: placeholderImage('#8f6249', '#d9a679', 'Portrait'), category: 'portrait', caption: 'Portrait — lumière naturelle' },
-  { src: placeholderImage('#5c7a6b', '#a9c9b8', 'Paysage'), category: 'paysage', caption: 'Paysage — heure dorée' },
-  { src: placeholderImage('#4a5568', '#a0aec0', 'Urbain'), category: 'urbain', caption: 'Urbain — rue et architecture' },
-  { src: placeholderImage('#3f6b4f', '#8fbf8f', 'Nature'), category: 'nature', caption: 'Nature — forêt et lumière' },
-  { src: placeholderImage('#7a5c47', '#f0c896', 'Portrait'), category: 'portrait', caption: 'Portrait — extérieur' },
-  { src: placeholderImage('#6b5b7a', '#c9a9d9', 'Paysage'), category: 'paysage', caption: 'Paysage — montagne' },
-  { src: placeholderImage('#2f3b4c', '#7d95b3', 'Urbain'), category: 'urbain', caption: 'Urbain — nuit' },
+  { src: placeholderImage('#8f6249', '#d9a679', 'Portrait'), category: 'portrait', caption: 'Portrait — natural light' },
+  { src: placeholderImage('#5c7a6b', '#a9c9b8', 'Landscape'), category: 'landscape', caption: 'Landscape — golden hour' },
+  { src: placeholderImage('#4a5568', '#a0aec0', 'Urban'), category: 'urban', caption: 'Urban — street and architecture' },
+  { src: placeholderImage('#3f6b4f', '#8fbf8f', 'Nature'), category: 'nature', caption: 'Nature — forest and light' },
+  { src: placeholderImage('#7a5c47', '#f0c896', 'Portrait'), category: 'portrait', caption: 'Portrait — outdoors' },
+  { src: placeholderImage('#6b5b7a', '#c9a9d9', 'Landscape'), category: 'landscape', caption: 'Landscape — mountain' },
+  { src: placeholderImage('#2f3b4c', '#7d95b3', 'Urban'), category: 'urban', caption: 'Urban — night' },
   { src: placeholderImage('#4f6b3f', '#a3d97a', 'Nature'), category: 'nature', caption: 'Nature — macro' },
   { src: placeholderImage('#8a5a4a', '#e0a98f', 'Portrait'), category: 'portrait', caption: 'Portrait — studio' },
 ];
 
-// Génère une image placeholder en SVG (à remplacer par de vraies photos).
+// Generates an SVG placeholder image (to be replaced with real photos).
 function placeholderImage(colorA, colorB, label) {
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="600" height="750">
@@ -31,7 +30,7 @@ function placeholderImage(colorA, colorB, label) {
       <text x="50%" y="52%" font-family="sans-serif" font-size="28" fill="#ffffffcc"
             text-anchor="middle" dominant-baseline="middle">${label}</text>
       <text x="50%" y="58%" font-family="sans-serif" font-size="14" fill="#ffffff99"
-            text-anchor="middle" dominant-baseline="middle">Photo à venir</text>
+            text-anchor="middle" dominant-baseline="middle">Photo coming soon</text>
     </svg>`;
   return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 }
@@ -120,16 +119,16 @@ mainNav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => mainNav.classList.remove('open'));
 });
 
-// Contact form -> ouvre le client mail avec le message pré-rempli
+// Contact form -> opens the mail client with the message pre-filled
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
-  const subject = encodeURIComponent(`Contact site — ${name}`);
+  const subject = encodeURIComponent(`Website contact — ${name}`);
   const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
   window.location.href = `mailto:laviolettemaeva.m@gmail.com?subject=${subject}&body=${body}`;
 });
 
-// Année dynamique dans le footer
+// Dynamic year in the footer
 document.getElementById('year').textContent = new Date().getFullYear();
